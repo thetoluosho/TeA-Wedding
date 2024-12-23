@@ -1,0 +1,208 @@
+/*Google fonts - Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Arima:wght@100..700&family=Freehand&family=Poppins:wght@400;500;600;700&family=Tiny5&display=swap')
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    background-color: white;
+    background-image: url(IMG_5758.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+    z-index: 1;
+  }
+
+.sidebar{
+    width: 270px;
+    position: fixed;
+    margin: 16px;
+    border-radius: 16px;
+    background: black;
+    height: calc(100vh - 32px);
+    transition: 0.4s ease;
+    z-index: 3;
+}
+
+.sidebar.collapsed{
+    width: 85px;
+}
+
+.sidebar-header .toggler{
+    height: 35px;
+    width: 35px;
+    border: none;
+    color: white;
+    margin: 50px 30px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #DA975A;
+    transition: 0.4s ease;
+}
+
+
+.sidebar.collapsed .sidebar-header .toggler{
+    transform: translate(-4px, 22px);
+}
+
+.sidebar-header .toggler:hover{
+    transform: scale(1.2);
+}
+
+.sidebar-header .toggler i{
+    font-size: 1.75rem;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .toggler i{
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list{
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 45px 15px;
+    flex-direction: column;
+}
+
+.sidebar-nav .nav-link{
+    color: #DA975A;
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    border-radius: 8px;
+    align-items: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.sidebar-nav .nav-link:hover{
+    color: white;
+    background: #5c4c3e;
+    transform: scale(1.12);
+}
+
+.sidebar-nav .nav-link .nav-label{
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar-nav .nav-item{
+    position: relative;
+
+}
+
+.sidebar-nav .nav-tooltip{
+    position: absolute;
+    top: -10px;
+    opacity: 0;
+    pointer-events: none;
+    left: calc(100% + 25px);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #DA975A;
+    white-space: nowrap;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0s;
+}
+
+.sidebar-nav .nav-item:hover .nav-tooltip{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(50%);
+    transition: 0.4s ease;
+}
+
+.landing-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 400px;
+    font-family: "Freehand", cursive;
+}
+
+.landing-text h3{
+    font-size: 50px;
+    letter-spacing: 7px;
+    z-index: 3;
+    color: white;
+}
+
+.landing-text p{
+    font-size: 40px;
+    color: white;
+    z-index: 3;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.landing-date{
+    position: absolute;
+    top: 525px;
+    left: 580px;
+    z-index: 3;
+    font-family: "Freehand", cursive;
+}
+
+.landing-date h4{
+    color: white;
+    letter-spacing: 10px;
+    font-size: 20px;
+}
+
+
+@media (max-width: 1024px){
+    .sidebar{
+        margin: 10px;
+        width: calc(100% - 28px);
+    }
+
+    .sidebar-header{
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: black;
+        padding: 8px 0px;
+        border-radius: 16px;
+    }
+
+    .sidebar-nav .nav-link{
+        gap: 10px;
+        padding: 15px;
+        font-size: 0.94rem;
+    }
+
+    .sidebar-nav .nav-link .nav-icon{
+        font-size: 1.37rem;
+    }
+
+}
